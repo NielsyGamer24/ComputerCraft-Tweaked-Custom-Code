@@ -5,22 +5,15 @@ function wirelessLever()
     redstone.setOutput("back", false)
 
     while true do
-        local _, _, sender, _, _, message = os.pullEvent("modem_message")
+        local senderID, message, protocol = rednet.receive(channel)
 
         if message == "toggle" then
             local currentState = redstone.getOutput("back")
             redstone.setOutput("back", not currentState)
-
         end
     end
 end
 
+wirelessLever() -- calls function to be executed
 
-function wirelessMessage()
-    local modemSide = "top"  -- adjust based on modem location
-    local channel = 123
-    rednet.open(modemSide)
-    rednet.send("ID", "toggle", channel) -- adjust ID to computerid
-    rednet.close(modemSide)
-end
 
