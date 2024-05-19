@@ -23,7 +23,7 @@ function passwordSystem()
             write("Enter password")
             local password = read("*")
 
-            setPassword(username, passwordSystem)
+            setPassword(username, password)
             sleep(1)
         elseif option == 2 then
             term.clear()
