@@ -1,6 +1,6 @@
 function wirelessLever()
     local modemSide = "right"
-    local channel = 123
+    local channel = "123"
 
     redstone.setOutput("back", false)
 
