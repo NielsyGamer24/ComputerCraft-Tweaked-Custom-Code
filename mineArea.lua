@@ -1,9 +1,33 @@
 function refuelIfNeeded()
-    if turtle.getFuelLevel() == 0 and turtle.select(1) == "minecraft:coal" then
-        turtle.select(1)
-        turtle.refuel()
+    if turtle.getFuelLevel() == 0 then
+        for i = 1, 16 do
+            turtle.select(i)
+            if itemDetail and itemDetail.name == turtle.getItemDetail == "minecraft:coal" then
+                turtle.refuel()
+                break
+            end
+        end
     end
 end
+
+
+            
+  
+
+
+
+
+function dropCobblestone()
+    for i = 1, 16 do
+        local itemDetail = turtle.getItemDetail(i)
+        if itemDetail and itemDetail.name == "minecraft:cobblestone" then
+            turtle.select(i)
+            turtle.drop()
+        end
+    end
+end
+
+
 
 function digAndMove()
     refuelIfNeeded()
